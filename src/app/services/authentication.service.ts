@@ -52,7 +52,7 @@ set setPasswordKey(value:any) {
 login(email: string, password: string) {
   // console.log(email,password)
   console.log('logged')
-    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDIDRWPx_eyjjYcGegcDua_hz21G1vkfYE`, { email, password , returnSecureToken:true })
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=`, { email, password , returnSecureToken:true })
         .pipe(tap(user => {
             localStorage.setItem('accessToken', JSON.stringify(user.idToken));
             localStorage.setItem('refreshToken', JSON.stringify(user.refreshToken));
@@ -68,7 +68,7 @@ login(email: string, password: string) {
 sign(email: string, password: string) {
   console.log('signed')
   // console.log(email,password)
-    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDIDRWPx_eyjjYcGegcDua_hz21G1vkfYE`, { email, password , returnSecureToken:true })
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=`, { email, password , returnSecureToken:true })
         // .pipe(tap(user => {
         //     localStorage.setItem('accessToken', JSON.stringify(user.result.accessToken));
         //     localStorage.setItem('refreshToken', JSON.stringify(user.result.refreshToken));
